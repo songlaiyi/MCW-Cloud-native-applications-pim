@@ -10,6 +10,6 @@ export class SessionsService {
 
   constructor(private http: HttpClient, private appService: AppService) { }
   public getSessions() {
-    return this.http.get('/api/sessions');
+    return this.http.get('https://content-api-app.azurewebsites.net/api/sessions');
   }
 }
