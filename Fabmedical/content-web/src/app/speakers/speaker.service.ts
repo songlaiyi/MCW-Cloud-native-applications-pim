@@ -10,6 +10,6 @@ export class SpeakerService {
 
   constructor(private http: HttpClient, private appService: AppService) { }
   public getSpeakers() {
-    return this.http.get('https://content-api-app.azurewebsites.net/api/speakers');
+    return this.http.get('/api/speakers');
   }
 }
