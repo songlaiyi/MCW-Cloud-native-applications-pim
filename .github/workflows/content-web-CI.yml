@@ -42,7 +42,7 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: ${{ env.containerRegistry }}
-        username: ${{ secrets.ACR_USENAME }}
+        username: ${{ secrets.ACR_USERNAME }}
         password: ${{ secrets.ACR_PASSWORD }}
 
     - name: Build and push an image to container registry
