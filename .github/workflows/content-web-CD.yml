@@ -30,6 +30,7 @@ jobs:
  build-and-push-helm-chart:
      name: Build and Push Helm Chart
      runs-on: ubuntu-latest
+     needs: [build-and-publish-docker-image]
      steps:
      # Checkout the repo
      - uses: actions/checkout@master
@@ -66,7 +67,7 @@ jobs:
  aks-deployment:
     name: AKS Deployment
     runs-on: ubuntu-latest
-    needs: [build-and-push-helm-chart]
+    needs: [build-and-publish-docker-image,build-and-push-helm-chart]
     steps:
     # Checkout the repo
     - uses: actions/checkout@master
